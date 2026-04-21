@@ -20,7 +20,7 @@ export const TableSim: React.FC = () => {
   };
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
     if (isRunning && currentI <= 10) { // Limit to 10 for better UI visualization instead of 20
       timer = setTimeout(() => {
         setRows(prev => [...prev, { i: currentI, res: num * currentI }]);

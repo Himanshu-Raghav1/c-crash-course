@@ -1,0 +1,320 @@
+{
+  "A1": {
+    "id": "A1",
+    "title": "Assignment 1",
+    "ps": "",
+    "objective": "To understand  the use of conditional  statements  in C programming. \nTo implement logical conditions for solving real -world problems.  \nTo develop  problem -solving  skills  using  decision  control  structures.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  year n \nStep 3: Check  if n is divisible  by 4 and if it is divisible  by 100 and if it is divisble  by 400 \nStep 4: If it is divisible by 4 but not by 100, or it is divisible by 400, display a leap year \nStep 5: In any other case, display not a leap year  \nStep 6: STOP"
+    ],
+    "io": {
+      "input": "2024",
+      "output": ""
+    },
+    "conclusion": "Thus,  the program  successfully  checks  whether  a given  year is a Leap  Year  using \nconditional statements in C.  \\n\\n--- PAGE 4 ---\\n",
+    "code": "#include  <stdio.h>  \n \nvoid main(){ \nint n;  \nprintf(\"Enter  a Year  - \"); \nscanf(\"%d\",&n);  \nif ((n%4  == 0 && n%100  != 0) || (n%400  == 0)){ \nprintf(\"Leap  Year\");  \n} \nelse{  \nprintf(\"Not  Leap  Year\");  \n} \n}"
+  },
+  "A2": {
+    "id": "A2",
+    "title": "Assignment 2",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of menu  driven  programming  in C. \n \n\u2022 To apply  conditional  statements  and switch \u2013case  control  structures.  \n \n\u2022 To perform  basic  arithmetic  operations  using  user-defined  input.  \n \n\u2022 To enhance  logical  thinking  and problem -solving  skills.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  operation  input  \nStep 3: Accept two numbers a and b \nStep 4: if input  was +, display  their sum \nStep 5: if input  was -, display  their difference \nStep 6: if input was *, display their product \nStep 7: if input was /, display their quotient \nStep 8: STOP"
+    ],
+    "io": {
+      "input": "* \n \n3 5",
+      "output": ""
+    },
+    "conclusion": "Thus,  the menu  driven  program  in C successfully  performs  basic  arithmetic  operations  using \nswitch \u2013case statements.  \\n\\n--- PAGE 8 ---\\n",
+    "code": "#include  <stdio.h>  \n\\n\\n--- PAGE 6 ---\\nvoid main()  \n \n{ \n \nchar n; \n \nprintf(\"Enter  operation \\n+ Addition \\n- Subtraction \\n* Multiplication \\n/ Division \\n\"); \nscanf(\"%c\", &n);  \nprintf(\"Enter  two numbers  : \"); \nfloat a,b;  \nscanf(\"%f  %f\", &a, &b); \nswitch(n){  \ncase  '+': \n \nprintf(\"%f\",  a+b); \nbreak;  \ncase  '-': \n \nprintf(\"%f\",  a-b); \nbreak;  \ncase  '*': \n \nprintf(\"%f\",  a*b); \nbreak;  \ncase  '/': \n \nprintf(\"%f\",  a/b); \nbreak;  \ndefault:  \n \nprintf(\"Invalid  Input\");  \n \n} \n \n} \\n\\n--- PAGE 7 ---\\n"
+  },
+  "A3": {
+    "id": "A3",
+    "title": "Assignment 3",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of looping  statements  in C. \n \n\u00b7 To generate  multiplication  tables  using  loops.  \n \n\u00b7 To improve  program  logic and execution  flow understanding.",
+    "algorithm": [
+      "Step 1: START  \n \nStep 2: Accept number n \nStep 3: Iterate  i from 1 to 20 \nStep 4: Each  iteration,  display  i \u00d7 n \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "5",
+      "output": "\\n\\n--- PAGE 11 ---\\n"
+    },
+    "conclusion": "Thus,  the menu  driven  program  in C successfully  performs  basic  arithmetic  operations  using \nswitch \u2013case statements.  \n\\n\\n--- PAGE 12 ---\\n",
+    "code": "#include  <stdio.h>  \n \n \n \nvoid main(){ \nint n;  \nprintf(\"Enter  number  - \"); \nscanf(\"%d\",&n);  \nfor (int i = 1; i <=20; i++){ \nprintf(\"%d  x %d = %d\\n\",n,i,n*i);  \n} \n \n}"
+  },
+  "A4": {
+    "id": "A4",
+    "title": "Assignment 4",
+    "ps": "",
+    "objective": "To understand  the importance  of flowchart  for any programming  model. \nTo learn simple flowchart symbols and arrows to define relationships.  \nTo understand  and develop  visual  representations  of flow of data.",
+    "algorithm": [
+      "Step 1: START  \n \nStep 2: Accept  Basic  Pay BP \n \nStep 3: Define  HRA  as 0.1, TA as 0.05 and PT as 0.02 \n \nStep 3: Calculate  Gross  salary  using  formula:  BP\u00d7(1  - HRA  - TA) \nStep 4: Calculate Total Pay using GS\u00d7(1 -PT) \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "1500",
+      "output": ""
+    },
+    "conclusion": "Thus,  we have  learned  to write  algorithms  and to draw  its representation  in \nterms of flowchart.  \\n\\n--- PAGE 15 ---\\n",
+    "code": "#include  <stdio.h>  \n \n \n \nint main()  \n \n{ \n \nprintf(\"Enter  Basic  Pay - \"); \nfloat BP;  \nscanf(\"%f\",  &BP);  \n \nfloat HRA  = 0.1, TA = 0.05,  PT = 0.02; \nfloat GS = BP*(1+HRA+TA);  \nprintf(\"Gross  Salary  - %f\",GS  * (1-PT));  \n \n}"
+  },
+  "A8": {
+    "id": "A8",
+    "title": "Assignment 8",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of conditional  statements  in C \n\u2022 To apply  logical  operators  for decision  making  \n\u2022 To calculate  total,  percentage,  and grade  of a student  \n\u2022 To enhance  problem -solving  skills  using  real-life scenarios",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  marks  of 5 courses  \nStep 3: Define  total marks  as sum of all marks  \nStep 4: It any of the marks  is below  40, display  FAIL  as the result \nStep 5: Calculate Percentage as total marks divided by 5  \nStep 6: Define Grade as Distinction if percentage is over 75%, else First Division if \npercentage  is over 60%,  else Second  Division  if over 50% else Third  Division  if over 40% \nStep 7: Display all information  \nStep 8: STOP"
+    ],
+    "io": {
+      "input": "85 74 93 56 68",
+      "output": ""
+    },
+    "conclusion": "Thus,  the program  to calculate  student  result  and grade  based  on marks  was successfully \nimplemented using C programming. This program demonstrates the effective use of \nconditional statements, logical operators, and arithmetic operations.  \\n\\n--- PAGE 18 ---\\n",
+    "code": "#include  <stdio.h>  \n \nint main(){  \nprintf(\"Enter  Marks  in 5 Subjects  : \"); \nint m1,m2,m3,m4,m5;  \nscanf(\"%d  %d %d %d %d\",&m1,&m2,&m3,&m4,&m5); \nint t = m1+m2+m3+m4+m5;  \nfloat p = t / 5.0; \nint pass = 1;  \nif (m1 < 40) pass  = 0; \nif (m2 < 40) pass  = 0; \nif (m3 < 40) pass  = 0; \nif (m4 < 40) pass  = 0; \nif (m5 < 40) pass  = 0; \nprintf(\"Total  Marks  = %d\\nPercentage  = %f%\\nResult:  %s\",t,p,(pass?\"PASS\":\"FAIL\")); \nif (pass){  \nprintf(\" \\nGrade:  \"); \nif (p >= 75) printf(\"Distinction\");  \nelse if (p >= 60) printf(\"First Division\"); \nelse if (p >= 50) printf(\"Second  Division\"); \nelse printf(\"Third Division\");  \n} \n}"
+  },
+  "A9": {
+    "id": "A9",
+    "title": "Assignment 9",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of Armstrong  numbers.  \n\u2022 To practice  arithmetic  operations  in C. \n\u2022 To develop  logical  thinking  using  loops  and conditional  statements.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  number  n \nStep 3: Iterate  through  n to find digits  d \nStep 4: Iterate  through  n to find sum of all digits  raised  to d \nStep 5: If sum equals  n, display  armstrong  number  else display  not armstrong  number \nStep 6: STOP"
+    ],
+    "io": {
+      "input": "153",
+      "output": "\\n\\n--- PAGE 21 ---\\n"
+    },
+    "conclusion": "Thus,  we have  successfully  written  a C program  to check  whether  a given  number  is an \nArmstrong number using loops and arithmetic operations.  \\n\\n--- PAGE 22 ---\\n",
+    "code": "#include  <stdio.h> \n#include  <math.h>  \n \nint isArmstrong(int  n){ \nint tn = n;  \nint d = 0; \nwhile(tn  > 0){ \ntn /= 10; \nd++; \n} \ntn = n; \nint s = 0; \nwhile(tn  > 0){ \ns += pow(tn%10,d); \ntn /= 10;  \n} \nif (s == n) return  1; \nreturn 0;  \n} \n \nint main(){ \nint n;  \nprintf(\"Enter  number  : \"); \nscanf(\"%d\",&n);  \nprintf(isArmstrong(n)?\"Armstrong  Number\":\"Not  Armstrong  Number\");  \n}"
+  },
+  "A10": {
+    "id": "A10",
+    "title": "Assignment 10",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of switch -case  statements  in C. \n\u2022 To perform  basic  arithmetic  and special  mathematical  operations.  \n\u2022 To enhance  problem -solving  skills  using  menu -driven  programs.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  operation  input  \nStep 3: Accept  the required  amount  of numbers  \nStep 4: Check  for illegal  cases  (division  by zero,  negative  factorial) \nStep 5: Perform given operation  \nStep 6: Display  results \nStep 7: STOP"
+    ],
+    "io": {
+      "input": "^ \n \n5 3",
+      "output": "\\n\\n--- PAGE 25 ---\\n"
+    },
+    "conclusion": "Thus,  a simple  calculator  program  was successfully  implemented  using  C programming.  The \nprogram demonstrates the use of switch -case statements, loops, and arithmetic operations.  \n\\n\\n--- PAGE 26 ---\\n",
+    "code": "#include<stdio.h> \n#include<math.h>  \n \nlong long fact(long  long n){ \nif (n == 1) return n; \nreturn (n * fact(n -1)); \n} \n\\n\\n--- PAGE 24 ---\\nint main(){ \nchar op; \nprintf(\"Enter  Operation: \\n+, -, *, /, ^, !\\n\"); \nscanf(\"%c\",&op);  \nint a,b; \nif (op != '!'){ \nprintf(\"Enter  2 numbers  : \"); \nscanf(\"%d %d\",&a,&b);  \n} \nelse{  \nprintf(\"Enter  1 number  : \"); \nscanf(\"%d\",&a);  \n} \nswitch(op){ \ncase  '+': \nprintf(\"%d\",a+b); \nbreak;  \ncase  '-': \nprintf(\"%d\",a -b); \nbreak;  \ncase  '*': \nprintf(\"%d\",a*b); \nbreak;  \ncase  '/': \nprintf(\"%d\",a/b); \nbreak;  \ncase  '^': \nprintf(\"%f\",pow(a,b)); \nbreak;  \ncase  '!': \nprintf(\"%d\",fact(a)); \nbreak;  \n} \n}"
+  },
+  "A11": {
+    "id": "A11",
+    "title": "Assignment 11",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of mathematical  operations  in C. \n\u2022 To implement  loops  and conditional  statements  \n. \u2022 To perform  number -based  computations.  \n\u2022 To enhance  logical  thinking  using  menu -driven  programs.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  a number  \nStep 3: Display  square  root of number \nStep 4: Display square of number \nStep 5: Display Cube of number  \nStep 6: Display primality of number \nStep 7: Display factorial of number  \nStep 8: Display  prime  factors  of number \nStep 9: STOP"
+    ],
+    "io": {
+      "input": "12",
+      "output": "\\n\\n--- PAGE 29 ---\\n"
+    },
+    "conclusion": "Thus, the program to perform various mathematical operations on a number was \nsuccessfully  implemented  using  C programming.  This program  demonstrates  the use of \nloops, conditional statements, switch -case, and mathematical functions.  \n\\n\\n--- PAGE 30 ---\\n",
+    "code": "#include  <stdio.h> \n#include  <math.h>  \n \nint isPrime(int  n){ \nfor (int i = 2; i <= sqrt(n);  i++){ \nif (n%i==0){  \nreturn  0; \n} \n} \nreturn  1; \n} \n \nint fact(int  n){ \nif (n > 0){  \nreturn  n * fact(n -1); \n} \nreturn  1; \n} \n \nint main(){  \nprintf(\"Enter  a number  - \"); \nint n;  \nscanf(\"%d\",&n);  \nprintf(\"Square  Root  - %f\\nSquare  of the number  - %d\\nCube  of the number  - %d\\nIs \nnumber Prime - %s\\nFactorial of number - %d\\nPrime Factors of the number - \n\",sqrt(n),n*n,n*n*n,(isPrime(n)?\"Yes\":\"No\"),fact(n));  \n \nwhile  (n > 1){ \nfor (int i = 2; i <= n; i++){ \nif (n%i==0){  \nprintf(\"%d  \", i); \nn/=i; \nbreak;  \n} \n} \n} \n}"
+  },
+  "A12": {
+    "id": "A12",
+    "title": "Assignment 12",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of mathematical  operations  in C. \n\u2022 To implement  loops  and conditional  statements  \n. \u2022 To perform  number -based  computations.  \n\u2022 To enhance  logical  thinking  using  menu -driven  programs.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  numbers  a & b (with  b being  the smaller  number) \nStep 3: If b is 0, GCD is a  \nStep 4: Set a as b and b as the remainder of a/b \nStep 5: Repeat  steps  3 & 4 until GCD  is obtained \nStep 6: Display GCD"
+    ],
+    "io": {
+      "input": "27 63",
+      "output": ""
+    },
+    "conclusion": "Thus,  the program  to find the smallest  common  divisor  and the Greatest  Common  Divisor  of \ntwo numbers was successfully implemented using C programming. This program \ndemonstrates the use of loops, conditional statements, and the Euclidean algorithm.  \\n\\n--- PAGE 33 ---\\n",
+    "code": "#include <stdio.h> \nint GCD(int  a, int b){ \nif (b == 0) return a; \nreturn(GCD(b,  a%b));  \n} \n \nint main()  { \nprintf(\"Enter  2 numbers  - \"); \nint a, b;  \n\\n\\n--- PAGE 32 ---\\nscanf(\"%d %d\",&a, &b); \nprintf(\"GCD  - %d\", GCD(a,b));  \n}"
+  },
+  "A13": {
+    "id": "A13",
+    "title": "Assignment 13",
+    "ps": "",
+    "objective": "\u2022 To understand  number  manipulation  using  loops  \n. \u2022 To learn  the use of modulo  (%) and division  (/) operators.  \n\u2022 To implement  logic for reversing  digits  of a number.  \n\u2022 To improve  problem -solving  skills  using  iterative  structures.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  number  n \nStep 3: Iterate  through  each  digit of n starting  from the unit digit while  adding  it to m \nmultiplied by 10  \nStep 4: Display  m \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "123",
+      "output": ""
+    },
+    "conclusion": "Thus, the program to print the digits of a number in reverse order was successfully \nimplemented  using  C programming.  The program  demonstrates  the effective  use of loops, \nmodulo operator, and division operator.  \\n\\n--- PAGE 36 ---\\n",
+    "code": "#include  <stdio.h>  \n \nint reverse(int  n){ \nint m = 0; \nwhile (n > 0){  \nm = 10*(m)  + n%10;  \nn/=10;  \n} \nreturn  m; \n} \n\\n\\n--- PAGE 35 ---\\nint main()  { \nprintf(\"Enter  a number  - \"); \nint n;  \nscanf(\"%d\",&n);  \nprintf(\"Reverse  number  - %d\", reverse(n));  \n}"
+  },
+  "A6": {
+    "id": "A6",
+    "title": "Assignment 6",
+    "ps": "",
+    "objective": "To demonstrate  two different  approaches  for calculating  the factorial  of a number:  iterative \n(non-recursive) and recursive, showcasing the versatility of problem -solving methods in \nProgramming.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  number  n \nStep 3: Iterate  i from 1 to n, and multiply  a product  variable  defined  originally  as 1 by the \nloop count  \nStep 4: Display  product  as factorial \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "4",
+      "output": ""
+    },
+    "conclusion": "Thus,  we have  successfully  executed  factorial  of a number  with and without \nRecursion.  \\n\\n--- PAGE 39 ---\\n",
+    "code": "#include  <stdio.h>  \n \nint factrec(int  n){ \nif (n < 1) return  1; \nelse return(n  * factrec(n -1)); \n} \n \nint factloop(int  n){ \nint f = 1;  \n\\n\\n--- PAGE 38 ---\\nfor (int i = 1; i <= n; i++){ \nf *= i;  \n} \nreturn  f; \n} \n \nint main()  { \nprintf(\"Enter  a number  - \"); \nint n;  \nscanf(\"%d\",&n);  \nprintf(\"Factorial  with recursion  - %d\\nFactorial  without  recursion  - \n%d\",factrec(n),factloop(n));  \n}"
+  },
+  "A7": {
+    "id": "A7",
+    "title": "Assignment 7",
+    "ps": "",
+    "objective": "To understand  the concept  of structures  in C. \nTo learn  how to store  multiple  records  using  an array  of structures.  \nTo accept  and process  student  details  such  as name,  roll number,  and marks. \nTo calculate total and percentage and display the result.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  student  name,  roll no. and marks \nStep 3: Store the accepted value in a struct  \nStep 4: Display details of student  \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "Om Nayak \n91 \n728",
+      "output": "."
+    },
+    "conclusion": "Thus, the C program successfully accepts student details using an array of \nstructures  and displays  the calculated  result  including  total marks  and percentage.  \n\\n\\n--- PAGE 42 ---\\n",
+    "code": "#include  <stdio.h>  \n\\n\\n--- PAGE 41 ---\\nstruct  student{ \nint rollno;  \nint marks;  \nchar name[99];  \n}; \n \nint main()  { \nprintf(\"Enter  Student  name,  marks  and roll number \\n\"); \nstruct student s;  \nfgets(s.name,  99 ,stdin);  \nscanf(\"%d  %d\",&s.marks,  &s.rollno);  \nprintf(\"Name  - %sRoll  Number  - %d\\nMarks  - %d\",s.name,s.rollno,s.marks);  \n}"
+  },
+  "A14": {
+    "id": "A14",
+    "title": "Assignment 14",
+    "ps": "",
+    "objective": "To understand  number  system  conversions.  \nTo learn  how to convert  binary  numbers  to decimal  numbers  in C. \nTo practice the use of loops and arithmetic operations.  \nTo develop  logical  thinking  for number  system  problems.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  binary  number  \nStep 3: Iterate  through  binary  number  and add digit times  2^place  value  to a variable  sum \nStep 4: Display sum  \nStep 5: STOP"
+    ],
+    "io": {
+      "input": "100101",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  converts  a binary  number  entered  by the \nuser into its decimal equivalent using loops and arithmetic operations.  \\n\\n--- PAGE 45 ---\\n",
+    "code": "#include  <stdio.h> \n#include  <math.h>  \n \n \nint bintodec(int  b, int n){ \nif (b == 0) return 0;  \nreturn  b%10  * pow(2,n)  + bintodec(b/10,++n);  \n} \n \nint main()  { \n\\n\\n--- PAGE 44 ---\\nint n; \nprintf(\"Enter  Binary  Number  - \"); \nscanf(\"%d\", &n);  \nprintf(\"Decimal  Number  - %d\",bintodec(n,0));  \n}"
+  },
+  "A15": {
+    "id": "A15",
+    "title": "Assignment 15",
+    "ps": "",
+    "objective": "To understand  the concept  of pseudo  random  numbers. \nTo learn the use of rand() and srand() functions in C.  \nTo generate  random  numbers  using  the standard  library. \nTo understand  the role of header  files in C programming.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  no. of numbers  to be generated  n. \nStep 3: Generate  and display  n pseudo -random  numbers. \nStep 4: STOP"
+    ],
+    "io": {
+      "input": "5",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  generates  pseudo  random  numbers  using \nthe rand() function and srand() for seeding.  \\n\\n--- PAGE 48 ---\\n",
+    "code": "#include <stdio.h> \n#include  <stdlib.h> \n#include <time.h>  \n\\n\\n--- PAGE 47 ---\\nint main() { \nsrand(time(NULL));  \nprintf(\"Enter  number  of numbers  - \"); \nint n;  \nscanf(\"%d\",&n);  \nfor (int i = 0; i < n; i++){ \nprintf(\"%d \\n\",rand());  \n} \n}"
+  },
+  "A16": {
+    "id": "A16",
+    "title": "Assignment 16",
+    "ps": "",
+    "objective": "To understand  how to work  with arrays  in C. \nTo learn  how to separate  numbers  based  on conditions. \nTo practice  the use of loops  and conditional  statements. \nTo display  two different  lists for even  and odd numbers.",
+    "algorithm": [
+      "Step 1: START  \nStep 2: Accept  array  of numbers  A \nStep 3: Create  empty  arrays  called  ODD  and EVEN  \nStep 4: Iterate  through  A and add odd numbers  to ODD  and even  numbers  to EVEN. \nStep 5: Display ODD and EVEN  \nStep 6: STOP"
+    ],
+    "io": {
+      "input": "1 2 3 4 5",
+      "output": "."
+    },
+    "conclusion": "Thus,  the C program  successfully  accepts  a list of integers  and partitions \nthem into two separate lists of even and odd numbers.  \\n\\n--- PAGE 51 ---\\n",
+    "code": "#include  <stdio.h> \nint main() {  \n\\n\\n--- PAGE 50 ---\\nprintf(\"Enter  size of array  - \"); \nint n;  \nscanf(\"%d\",&n); \nint A[n];  \nprintf(\"Enter  elements  of array \\n\"); \nfor (int i = 0; i < n; i++){  \nscanf(\"%d\",&A[i]);  \n} \nint ODD[n],  EVEN[n];  \nint oc = 0, ec = 0; \nfor (int i = 0; i < n; i++){ \nif (A[i] % 2 != 0) ODD[oc++]  = A[i]; \nelse EVEN[ec++]  = A[i]; \n} \nprintf(\"ODD  - \"); \nfor (int i = 0; i < oc; i++){ \nprintf(\"%d \",ODD[i]);  \n} \nprintf(\" \\nEVEN  - \"); \nfor (int i = 0; i < ec; i++){ \nprintf(\"%d  \",EVEN[i]);  \n} \n}"
+  },
+  "A5": {
+    "id": "A5",
+    "title": "Assignment 5",
+    "ps": "",
+    "objective": "\u2022 To understand  matrix  representation  in C using  two-dimensional  arrays.  \n\u2022 To implement  various  matrix  operations  using  C programming.  \n\u2022 To develop  logical  thinking  for solving  matrix -based  problems.",
+    "algorithm": [
+      "1. Start \n2. Read  the order  of the matrix  \n3. Read  elements  of the matrices  \n4. Perform  matrix  addition  \n5. Check  for saddle  point  \n6. Find inverse  of the matrix  (if determinant  \u2260 0) \n7. Check  whether  the matrix  is a magic  square  \n8. Display  results  \n9. Stop"
+    ],
+    "io": {
+      "input": "1 0 -2 \n3 1 -2 \n-5 -1 9 \n \n& \n \n1 0 1 \n0 1 0 \n1 0 1",
+      "output": "\\n\\n--- PAGE 57 ---\\n"
+    },
+    "conclusion": "Thus,  we have  learned  how to perform  basic  matrix  operations  using  C programming  and \nunderstood their practical applications.  \n\\n\\n--- PAGE 58 ---\\n",
+    "code": "#include  <stdio.h> \n#include  <math.h>  \nvoid cofactor(int  n, int a[n][n],  int c[n-1][n-1], int ai, int aj); \nvoid printm(int n, int a[n][n]){  \nfor (int i = 0; i < n; i++) \n{ \nfor (int j = 0; j < n; j++){ \nprintf(\"%d \",a[i][j]);  \n} \nprintf(\" \\n\"); \n} \n} \n \nvoid printfm(int  n, float a[n][n]){ \nfor (int i = 0; i < n; i++)  \n{ \nfor (int j = 0; j < n; j++){ \nprintf(\"%f \",a[i][j]);  \n} \nprintf(\" \\n\"); \n} \n} \n \nint Determinant(int  n, int a[n][n])  \n{ \nint d = 0; \nif (n == 2) \n{ \nd = a[0][0]*a[1][1]  - a[0][1]*a[1][0];  \nreturn  (d); \n} \nint c[n-1][n-1]; \nfor (int i = 0; i < n; i++){ \ncofactor(n,a,c,i,0);  \nd += pow( -1,i) * a[i][0]  * Determinant(n -1,c); \n} \nreturn  d; \n} \n \nvoid cofactor(int  n, int a[n][n],  int c[n-1][n-1], int ai, int aj) \n{ \nint ioff = 0; \nfor (int i = 0; i < n-1; i++) \n{ \\n\\n--- PAGE 54 ---\\nint joff = 0; \nif (i == ai){ \nioff = 1;  \n} \nfor (int j = 0; j < n-1; j++){ \nif (j == aj){  \njoff = 1; \n} \nc[i][j] = a[i + ioff][j  +joff];  \n} \n} \n} \n \nvoid adjoint(int  n, int a[n][n],  float b[n][n]){ \nfor (int i = 0; i < n; i++){  \nfor (int j = 0; j < n; j++){ \nint c[n -1][n-1]; \ncofactor(n,a,c,i,j);  \nb[i][j]  = Determinant(n -1,c); \n} \n} \n} \n \nvoid inverse(int  n, int a[n][n],  float b[n][n]){ \nint d = Determinant(n,a);  \nadjoint(n,a,b);  \nfor (int i = 0; i < n; i++){ \nfor (int j = 0; j < n; j++){ \nb[n][n]  = b[n][n]  * d; \n} \n} \n} \n \nvoid inputmatrix(int  n, int a[n][n]){ \nfor (int i = 0; i < n; i++){  \nfor (int j = 0; j < n; j++) \n{ \nscanf(\"%d\",&a[i][j]);  \n} \n} \n} \n \nvoid addmatrices(int  n, int a[n][n],  int b[n][n],  int c[n][n]){ \nfor (int i = 0; i < n; i++){  \nfor (int j = 0; j < n; j++) \n{ \nc[i][j] = a[i][j]  + b[i][j];  \n} \\n\\n--- PAGE 55 ---\\n} \n} \n \nint saddlepoint(int  n, int a[n][n],  int *check){ \nfor (int i = 0; i < n; i++){  \nfor (int j = 0; j < n; j++){ \nfor (int k = 0; k < n; k++){  \nif (a[i][j]  > a[i][k])  goto endofloop;  \n} \nfor (int k = 0; k < n; k++){  \nif (a[i][j]  < a[k][j])  goto endofloop;  \n} \n*check = 1; \nreturn  a[i][j]; \nendofloop:  \n} \n} \nreturn  0; \n} \n \nint ismagicsquare(int  n, int a[n][n]){ \nfor (int i = 0; i < n; i++){  \nfor (int j = 0; j < n; j++){ \nfor (int k = 0; k < n; k++){ \nfor (int l = 0; l < n; l++){ \nif (a[i][j]  == a[k][l]  && i != k && j != l){ \nreturn 0;  \n} \n} \n} \n} \nint sum = 0; \nfor (int j = 0; j < n; j++){ \nsum += a[i][j];  \n} \nif (sum!=  15) return  0; \nsum = 0; \nfor (int j = 0; j < n; j++){ \nsum += a[j][i];  \n} \nif (sum!=  15) return  0; \nsum = 0; \nfor (int j = 0; j < n; j++){ \nsum += a[j][j];  \n} \nif (sum!=  15) return  0; \n} \nreturn  1; \\n\\n--- PAGE 56 ---\\n} \n \nint main()  { \nint n;  \nprintf(\"Enter  Size of Matrices \\n\"); \nscanf(\"%d\",&n);  \nprintf(\"Enter  Elements  of Matrix  A\\n\"); \nint a[n][n];  \ninputmatrix(n,a);  \nprintf(\"Enter  Elements  of Matrix  B\\n\"); \nint b[n][n];  \ninputmatrix(n,b);  \nprintf(\" \\n\\nSum  of Matrix  A and B:\\n\"); \nint sum[n][n];  \naddmatrices(n,a,b,sum); \nprintm(n,sum);  \nprintf(\" \\n\"); \nint saddlepointexists  = 0; \nint saddlepointn  = saddlepoint(n,  a, &saddlepointexists);  \nif (saddlepointexists)  printf(\"Saddle  Point  of A:\\n%d\",saddlepointn); \nprintf(\"A is %s Magic Square\",ismagicsquare(n,a)?\"a\":\"not a\");  \nfloat inv[n][n];  \nif (Determinant(n,a) != 0){ \ninverse(n,a,inv); \nprintf(\" \\n\\nInverse  of A:\\n\"); \nprintfm(n,inv);  \n} \n}"
+  },
+  "A17": {
+    "id": "A17",
+    "title": "Assignment 17",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of mathematical  series  in programming.  \n\u2022 To implement  sine series  using  C programming.  \n\u2022 To practice  loops  and arithmetic  operations.  \n\u2022 To learn  the use of factorial  and power  calculations  in C.",
+    "algorithm": [],
+    "io": {
+      "input": "1 5",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  calculates  the sum of the sine series  for the given  number \nof terms.  \n \n\\n\\n--- PAGE 60 ---\\n",
+    "code": "#include  <stdio.h> \n#include  <math.h>  \n \nfloat fact(int  n){ \nif (n > 0){  \nreturn  n * fact(n -1); \n} \nreturn  1; \n} \n \nint main()  { \nfloat x; \nint n;  \nprintf(\"Enter  x (in radians)  : \"); \nscanf(\"%f\",&x);  \nprintf(\"Enter  number  of terms  : \"); \nscanf(\"%d\",&n);  \nfloat sum = 0; \nfor (int i = 1; i <= n; i++){ \nsum += pow( -1,i+1)  * (float)pow(x,((2*i) -1))/fact((2*i) -1); \n} \nprintf(\"Sum  = %f\",sum);  \n} \\n\\n--- PAGE 59 ---\\n"
+  },
+  "A18": {
+    "id": "A18",
+    "title": "Assignment 18",
+    "ps": "",
+    "objective": "\u2022 To understand  basic  string  operations  in C. \n\u2022 To learn  how to manipulate  strings  using  loops  and functions.  \n\u2022 To perform  comparison,  reversal,  and substring  checking.  \n\u2022 To check  whether  a string  is a palindrome.",
+    "algorithm": [],
+    "io": {
+      "input": "ABC \nABC",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  performs  different  string  operations  such  as length \ncalculation, reversal, equality check, palindrome check, and substring detection.  \n \n\\n\\n--- PAGE 62 ---\\n",
+    "code": "#include <stdio.h> \n#include  <string.h>  \n \nvoid reverse(int  n, char ver[n],  char rev[n]){; \nfor (int i = 0; i < n -1; i++){  \nrev[n  - i - 2] = ver[i];  \n} \nrev[n -1] = 0; \n} \n \nint main() { \nchar A[50];  \nprintf(\"Enter  String  A: \"); \nfgets(A, 50, stdin);  \nchar revA[strlen(A)]; \nreverse(strlen(A),A,revA); \nchar B[50];  \\n\\n--- PAGE 61 ---\\nprintf(\"Enter  String  B: \"); \nfgets(B, 50, stdin);  \nprintf(\"Length  of A = %d\\nReversed  A is %s\\nA and B are %s\\nA is %sa palindrome \\nB is \n%sa substring  of A\",strlen(A),revA,(strcmp(A,B)  == 0?\"Same\":\"Different\"),(strcmp(A,revA)  == \n0?\"\":\"not \"), (strstr(A,B) != NULL?\"\":\"not \"));  \n}"
+  },
+  "A19": {
+    "id": "A19",
+    "title": "Assignment 19",
+    "ps": "",
+    "objective": "\u2022 To understand  the use of structures  in C programming.  \n\u2022 To store  and manage  employee  records  using  structures.  \n\u2022 To perform  operations  such  as counting  and filtering  employee  data",
+    "algorithm": [],
+    "io": {
+      "input": "2 \nName \nAsstManager \nm 1 2  \nName2 \nManager  \nf 1 2",
+      "output": ""
+    },
+    "conclusion": "\\n\\n--- PAGE 64 ---\\nThus, the C program successfully demonstrates the use of structures to store employee \ndetails  and perform  various  operations  such  as counting  employees,  identifying  employees \nwith salary greater than 10,000, and displaying employees with the designation 'Asst \nManager'.  \n \n\\n\\n--- PAGE 65 ---\\n",
+    "code": "#include <stdio.h> \n#include  <string.h>  \n \nstruct employee{ \nchar name[50];  \nchar designation[50]; \nchar gender;  \nint date; \nint salary;  \n}; \n \nint main()  { \nprintf(\"Enter  number  of employees:  \"); \nint n;  \nscanf(\"%d\",&n);  \nstruct  employee  employees[n]; \nint highsalary = 0;  \nint male  = 0; \nfor (int i = 0; i < n; i++){ \\n\\n--- PAGE 63 ---\\nscanf(\"%c\", (char *) stdin); \nprintf(\"Enter name: \"); \nfgets(employees[i].name,  50, stdin); \nprintf(\"Enter designation: \");  \nfgets(employees[i].designation, 50, stdin); \nprintf(\"Enter  gender,  date of joining  and salary:  \"); \nscanf(\"%c  %d %d\",&employees[i].gender,&employees[i].date,  &employees[i].salary); \nif (employees[i].gender == 'm') male++;  \nif (employees[i].salary  > 10000)  highsalary++;  \n} \nprintf(\"Male  Employees  = %d\\nFemale  Employees  = %d\\nEmployees  with salary  over \n10000 = %d \\nEmployees with designation AsstManager: \\n\",male,n -male,highsalary);  \nfor (int i = 0; i < n; i++){ \nif (strcmp(employees[i].designation,\"AsstManager \\n\") == 0) \nprintf(\"%s\",employees[i].name);  \n} \n}"
+  },
+  "A20": {
+    "id": "A20",
+    "title": "Assignment 20",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of function  calls in the C programming  language.  \n\u2022 To learn  the difference  between  call by value  and call by reference.  \n\u2022 To demonstrate  swapping  of two numbers  with and without  pointers.",
+    "algorithm": [],
+    "io": {
+      "input": "2 5",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  demonstrates  the difference  between  swapping  values \nusing  call by value  and call by reference.  Using  pointers  allows  the function  to modify  the \noriginal variables directly.  \n \n\\n\\n--- PAGE 67 ---\\n",
+    "code": "#include  <stdio.h>  \n \nvoid swapvar(int  a, int b){ \nint c = b;  \nb = a; \na = c; \nprintf(\"After  swapping  without  pointers: \\na = %d, b = %d\\n\",a,b);  \n} \n \nvoid swappoint(int  *a, int *b){ \nint d;  \nint *c = &d; \n*c = *b; \n*b = *a; \n*a = *c; \nprintf(\"After  swapping  with pointers: \\na = %d, b = %d\\n\",*a,*b);  \n} \n \nint main()  { \\n\\n--- PAGE 66 ---\\nprintf(\"Enter  two numbers:  \"); \nint a,b;  \nscanf(\"%d  %d\",&a,&b); \nswapvar(a,b); \nswappoint(&a,&b);  \n}"
+  },
+  "A21": {
+    "id": "A21",
+    "title": "Assignment 21",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of file handling  in the C programming  language.  \n\u2022 To learn  how to read data from a file and write  data into another  file. \n\u2022 To implement  file copy  operation  using  standard  file handling  functions.",
+    "algorithm": [],
+    "io": {
+      "input": "",
+      "output": ""
+    },
+    "conclusion": "Thus,  the C program  successfully  demonstrates  file handling  operations  by copying  the \ncontents of one file into another using file handling functions.  \n \n \n \n \n \n \\n\\n--- PAGE 68 ---\\n \n\\n\\n--- PAGE 69 ---\\n",
+    "code": "#include  <stdio.h>  \n \nint main()  { \nFILE *f1 = fopen(\"FileA.txt\",\"r\"); \nFILE  *f2 = fopen(\"FileB.txt\",\"w\"); \nchar content[200];  \nwhile  (fgets(content,  200, f1) != NULL) \nfprintf(f2,\"%s\",content);  \nfclose(f1); \nfclose(f2);  \n}"
+  },
+  "A22": {
+    "id": "A22",
+    "title": "Assignment 22",
+    "ps": "",
+    "objective": "\u2022 To understand  the concept  of strings  in the C programming  language.  \n\u2022 To learn  how to use built-in string  functions  for string  manipulation.  \n\u2022 To perform  operations  such  as length  calculation,  copying,  concatenation,  comparison, \nand reversal using menu options.  \n.",
+    "algorithm": [],
+    "io": {
+      "input": "STrING  \na \n2",
+      "output": "\\n\\n--- PAGE 71 ---\\n"
+    },
+    "conclusion": "Thus, the C program successfully demonstrates different string operations using built -in \nfunctions  through  a menu  driven  approach,  making  the program  interactive  and easy  to use. \n \n\\n",
+    "code": "#include <stdio.h> \n#include  <string.h>  \n \nvoid reverse(int  n, char ver[n],  char rev[n]){; \nfor (int i = 0; i < n -1; i++){  \nrev[n  - i - 2] = ver[i];  \n} \nrev[n -1] = 0; \n} \n \nint main() { \nchar A[50];  \nprintf(\"Enter  String  A: \"); \nfgets(A, 50, stdin);  \nchar B[50];  \nprintf(\"Enter  String  B: \"); \nfgets(B, 50, stdin);  \nchar revA[strlen(A)]; \nreverse(strlen(A),A,revA); \nchar revB[strlen(B)];  \\n\\n--- PAGE 70 ---\\nreverse(strlen(B),B,revB);  \nprintf(\"1  - Length \\n2 - Copy \\n3 - Compare \\n4 - Concat \\n5 - Reverse \\nEnter  choice:  \"); \nint c;  \nscanf(\"%d\",&c); \nswitch(c){  \ncase  1: \nprintf(\"Length  of A - %d\\nLength  of B - %d\",strlen(A),strlen(B)); \nbreak;  \ncase  2: \nstrcpy(B,A);  \nprintf(\"A  - %s\\nB - %s\",A,B); \nbreak;  \ncase  3: \nprintf(\"A  and B are %s\",(strcmp(A,B)  == 0?\"Same\":\"Different\")); \nbreak;  \ncase  4: \nstrcat(A,B); \nprintf(\"A  - %s\",A); \nbreak;  \ncase  5: \nprintf(\"A  - %s, B - %s\",revA,revB); \nbreak;  \ndefault:  \nprintf(\"Error\");  \n} \n}"
+  }
+}
