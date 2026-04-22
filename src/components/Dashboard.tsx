@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { UnitViewer } from './UnitViewer';
 import { AssignmentViewer } from './AssignmentViewer';
-import { assignmentsOverview } from '../data/assignmentData';
+import { assignmentsOverview, assignmentData } from '../data/assignmentData';
 
 // --- DATA STRUCTURES ---
 interface CourseModule {
@@ -105,21 +105,34 @@ export const Dashboard = () => {
     </div>
   );
 
+  const handleCopyCode = (code: string, id: string) => {
+    navigator.clipboard.writeText(code);
+    alert(`${id} Code Copied to Clipboard!`);
+  };
+
   const renderAssignmentCopy = () => (
     <div className="animate-fade-in">
       <h2 className="text-xl font-bold text-gray-200 mb-6 border-b border-dark-700 pb-2">
         <span className="text-neon-orange mr-2">/</span> Quick Copy: Assignment Solutions
       </h2>
       <div className="bg-dark-800 p-6 rounded-lg border border-dark-700">
-        <p className="text-gray-400 mb-4">
-          Clean, fully commented, and error-free C code ready to be copied into your IDE or written on your exam paper.
+        <p className="text-gray-400 mb-6 text-sm italic border-l-2 border-neon-orange pl-3">
+          Clean, fully commented, and error-free C code ready to be copied into your IDE.
         </p>
-        <div className="space-y-3">
-          {[1, 2, 3, 4, 5].map((num) => (
-            <div key={num} className="flex justify-between items-center p-3 bg-dark-900 rounded border border-dark-700 hover:border-gray-500 transition-colors">
-              <span className="text-gray-300 font-mono text-sm">Assignment_{num < 10 ? `0${num}` : num}.c</span>
-              <button className="flex items-center space-x-2 text-xs font-bold text-neon-orange hover:text-white transition-colors bg-dark-800 px-3 py-1.5 rounded">
-                <Copy size={14} /> <span>COPY CODE</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {assignmentsOverview.map((item) => (
+            <div key={item.id} className="flex justify-between items-center p-3 bg-dark-900/50 rounded-lg border border-dark-700 hover:border-neon-orange/30 transition-all group">
+              <div className="flex flex-col">
+                <span className="text-gray-300 font-mono text-sm group-hover:text-white transition-colors">
+                  Assignment_{item.id.replace('A', '').padStart(2, '0')}.c
+                </span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider">{item.title}</span>
+              </div>
+              <button 
+                onClick={() => handleCopyCode(assignmentData[item.id]?.code || '', item.id)}
+                className="flex items-center space-x-2 text-xs font-bold text-neon-orange hover:bg-neon-orange hover:text-white transition-all bg-neon-orange/10 px-4 py-2 rounded-lg border border-neon-orange/20"
+              >
+                <Copy size={14} /> <span>COPY</span>
               </button>
             </div>
           ))}
