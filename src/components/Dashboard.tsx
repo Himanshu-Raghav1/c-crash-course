@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { 
-  BookOpen, Terminal, Cpu, GitBranch, Braces, 
-  List, BrainCircuit, Layers, FolderOpen, Database, 
-  Zap, Copy, Info 
+import {
+  BookOpen, Terminal, Cpu, GitBranch, Braces,
+  List, BrainCircuit, Layers, FolderOpen, Database,
+  Zap, Copy, Info
 } from 'lucide-react';
 import { UnitViewer } from './UnitViewer';
 import { AssignmentViewer } from './AssignmentViewer';
@@ -44,7 +44,7 @@ export const Dashboard = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {learnModules.map((mod) => (
-          <button 
+          <button
             key={mod.id}
             onClick={() => setSelectedUnit(mod.id)}
             className="flex items-center p-4 bg-dark-800 border border-dark-700 rounded-lg hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,240,255,0.2)] transition-all duration-300 text-left group"
@@ -70,9 +70,9 @@ export const Dashboard = () => {
           <p className="text-gray-400 text-sm max-w-2xl">
             This section breaks down the logic, edge cases, and algorithmic flowcharts for every single assignment so you actually understand how the code works before the exam.
           </p>
-          <a 
-            href="https://drive.google.com/file/d/16A9ijLORBwX2a82heDfDTiZODP9hEuZ-/view?usp=drive_link" 
-            target="_blank" 
+          <a
+            href="https://drive.google.com/file/d/16A9ijLORBwX2a82heDfDTiZODP9hEuZ-/view?usp=drive_link"
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center space-x-2 px-6 py-3 bg-neon-purple/20 text-neon-purple border border-neon-purple/50 rounded-xl hover:bg-neon-purple hover:text-white transition-all duration-300 font-bold text-sm shadow-[0_0_15px_rgba(157,78,221,0.1)] hover:shadow-[0_0_20px_rgba(157,78,221,0.3)] group"
           >
@@ -82,24 +82,24 @@ export const Dashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-           {assignmentsOverview.map((item) => (
-             <button 
-                key={item.id}
-                onClick={() => setSelectedAssignment(item.id)}
-                className="p-4 border border-dark-700 rounded-lg bg-dark-900 border-l-4 border-l-neon-purple hover:bg-dark-800 hover:border-neon-purple/50 transition-all text-left flex items-start group relative overflow-hidden"
-             >
-                <div className="flex-1 pr-4">
-                   <h3 className="font-bold text-gray-200 group-hover:text-neon-purple transition-colors text-sm">
-                     {item.id}: {item.title}
-                   </h3>
-                </div>
-                <div className="text-neon-purple opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all mt-0.5">
-                   <BrainCircuit size={16} />
-                </div>
-                {/* Decorative fade for long titles */}
-                <div className="absolute top-0 right-0 h-full w-4 bg-gradient-to-l from-dark-900 to-transparent group-hover:from-dark-800 pointer-events-none"></div>
-             </button>
-           ))}
+          {assignmentsOverview.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedAssignment(item.id)}
+              className="p-4 border border-dark-700 rounded-lg bg-dark-900 border-l-4 border-l-neon-purple hover:bg-dark-800 hover:border-neon-purple/50 transition-all text-left flex items-start group relative overflow-hidden"
+            >
+              <div className="flex-1 pr-4">
+                <h3 className="font-bold text-gray-200 group-hover:text-neon-purple transition-colors text-sm">
+                  {item.id}: {item.title}
+                </h3>
+              </div>
+              <div className="text-neon-purple opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all mt-0.5">
+                <BrainCircuit size={16} />
+              </div>
+              {/* Decorative fade for long titles */}
+              <div className="absolute top-0 right-0 h-full w-4 bg-gradient-to-l from-dark-900 to-transparent group-hover:from-dark-800 pointer-events-none"></div>
+            </button>
+          ))}
         </div>
       </div>
     </div>
@@ -128,7 +128,7 @@ export const Dashboard = () => {
                 </span>
                 <span className="text-[10px] text-gray-500 uppercase tracking-wider">{item.title}</span>
               </div>
-              <button 
+              <button
                 onClick={() => handleCopyCode(assignmentData[item.id]?.code || '', item.id)}
                 className="flex items-center space-x-2 text-xs font-bold text-neon-orange hover:bg-neon-orange hover:text-white transition-all bg-neon-orange/10 px-4 py-2 rounded-lg border border-neon-orange/20"
               >
@@ -159,7 +159,7 @@ export const Dashboard = () => {
   // --- MAIN COMPONENT RETURN ---
   return (
     <div className="max-w-6xl mx-auto p-6">
-      
+
       {/* Main Header */}
       <header className="mb-8 border-b border-dark-700 pb-6 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">
@@ -172,46 +172,58 @@ export const Dashboard = () => {
 
       {/* Tab Navigation Menu */}
       <nav className="flex space-x-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
-        <button 
-          onClick={() => setActiveTab('learn')}
-          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${
-            activeTab === 'learn' 
-            ? 'bg-neon-cyan/10 text-neon-cyan border-b-2 border-neon-cyan' 
-            : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
-          }`}
+        <button
+          onClick={() => {
+            setActiveTab('learn');
+            setSelectedUnit(null);
+            setSelectedAssignment(null);
+          }}
+          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${activeTab === 'learn'
+              ? 'bg-neon-cyan/10 text-neon-cyan border-b-2 border-neon-cyan'
+              : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
+            }`}
         >
           <BookOpen size={16} /> <span>Let's Learn</span>
         </button>
 
-        <button 
-          onClick={() => setActiveTab('understand')}
-          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${
-            activeTab === 'understand' 
-            ? 'bg-neon-purple/10 text-neon-purple border-b-2 border-neon-purple' 
-            : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
-          }`}
+        <button
+          onClick={() => {
+            setActiveTab('understand');
+            setSelectedUnit(null);
+            setSelectedAssignment(null);
+          }}
+          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${activeTab === 'understand'
+              ? 'bg-neon-purple/10 text-neon-purple border-b-2 border-neon-purple'
+              : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
+            }`}
         >
           <BrainCircuit size={16} /> <span>Assignments Understanding</span>
         </button>
 
-        <button 
-          onClick={() => setActiveTab('copy')}
-          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${
-            activeTab === 'copy' 
-            ? 'bg-neon-orange/10 text-neon-orange border-b-2 border-neon-orange' 
-            : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
-          }`}
+        <button
+          onClick={() => {
+            setActiveTab('copy');
+            setSelectedUnit(null);
+            setSelectedAssignment(null);
+          }}
+          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${activeTab === 'copy'
+              ? 'bg-neon-orange/10 text-neon-orange border-b-2 border-neon-orange'
+              : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
+            }`}
         >
           <Copy size={16} /> <span>Assignment Copy</span>
         </button>
 
-        <button 
-          onClick={() => setActiveTab('about')}
-          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${
-            activeTab === 'about' 
-            ? 'bg-gray-700/30 text-white border-b-2 border-white' 
-            : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
-          }`}
+        <button
+          onClick={() => {
+            setActiveTab('about');
+            setSelectedUnit(null);
+            setSelectedAssignment(null);
+          }}
+          className={`flex items-center space-x-2 px-5 py-3 rounded-md font-bold text-sm transition-all duration-200 whitespace-nowrap ${activeTab === 'about'
+              ? 'bg-gray-700/30 text-white border-b-2 border-white'
+              : 'text-gray-400 hover:bg-dark-800 hover:text-gray-200'
+            }`}
         >
           <Info size={16} /> <span>Discover More</span>
         </button>
