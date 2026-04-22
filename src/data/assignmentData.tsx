@@ -208,6 +208,23 @@ int main() {
   'A5': {
     id: 'A5',
     title: 'Assignment 5',
+    flowchart: `graph TD
+    Start([Start]) --> In[/Accept Matrix A and B/]
+    In --> Add[Iterate through elements and store sum in C]
+    Add --> DispC[/Display C/]
+    DispC --> Saddle[Iterate through A and check for saddle point]
+    Saddle --> SadCond{Saddle Point found?}
+    SadCond -- Yes --> DispSad[/Display Saddle Point/]
+    SadCond -- No --> Magic[Iterate through rows, columns, diagonals for sum]
+    DispSad --> Magic
+    Magic --> MagicCond{Sum = 15?}
+    MagicCond -- Yes --> DispMag[/Display Magic Square/]
+    MagicCond -- No --> DispNotMag[/Display Not Magic Square/]
+    DispMag --> DetCond{Det A = 0?}
+    DispNotMag --> DetCond
+    DetCond -- No --> DispInv[/Display A inverse as Adjoint/Det A/]
+    DetCond -- Yes --> Stop([Stop])
+    DispInv --> Stop`,
     ps: "Write  a program  in C to perform  basic  matrix  operations  such  as: 1. Addition  of two matrices 2. Saddle  point  of a matrix 3. Inverse  of a matrix 4. Magic  square  of a matrix",
     objective: "• To understand  matrix  representation  in C using  two-dimensional  arrays. • To implement  various  matrix  operations  using  C programming. • To develop  logical  thinking  for solving  matrix -based  problems.",
     algorithm: [
@@ -752,6 +769,11 @@ int main() {
   'A15': {
     id: 'A15',
     title: 'Assignment 15',
+    flowchart: `graph TD
+    Start([Start]) --> In[/Accept number of numbers/]
+    In --> Seed[Set seed to time]
+    Seed --> Gen[/Generate and display pseudo random numbers/]
+    Gen --> Stop([Stop])`,
     ps: "Write  a C program  to generate  pseudo  random  numbers.",
     objective: "To understand  the concept  of pseudo  random  numbers. To learn the use of rand() and srand() functions in C. To generate  random  numbers  using  the standard  library. To understand  the role of header  files in C programming.",
     algorithm: [
@@ -1078,6 +1100,18 @@ int main() {
   'A22': {
     id: 'A22',
     title: 'Assignment 22',
+    flowchart: `graph TD
+    Start([Start]) --> ReadA[/Read String A/]
+    ReadA --> ReadB[/Read String B/]
+    ReadB --> Menu[Display Menu]
+    Menu --> Choice[/Read choice/]
+    Choice --> Case{Choice?}
+    Case -- 1 --> Len[/Print Length of A & B/] --> End([End])
+    Case -- 2 --> Copy[Copy String A to B] --> End
+    Case -- 3 --> Comp[Compare A and B] --> End
+    Case -- 4 --> Cat[Concatenate B to A] --> End
+    Case -- 5 --> Rev[Reverse A and B] --> End
+    Case -- Default --> Err[/Print Error Message/] --> End`,
     ps: `Write  a menu  driven  program  in C to perform  various  string  operations  using  in-built 
 functions.`,
     objective: `• To understand  the concept  of strings  in the C programming  language.  
