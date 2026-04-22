@@ -1,494 +1,35 @@
-import React from 'react';
-import { LeapYearSim } from '../components/LeapYearSim';
-import { CalculatorSim } from '../components/CalculatorSim';
-import { TableSim } from '../components/TableSim';
-import { SalarySim } from '../components/SalarySim';
 
-export interface Assignment {
-  id: string;
-  title: string;
-  ps: string;
-  objective: string;
-  algorithm: string[];
-  flowchart?: string;
-  io: { input: string; output: string };
-  conclusion: string;
-  code: string;
-  sim?: React.ReactNode;
-}
+import sys
 
-export const assignmentsOverview = [
-  { id: 'A1', title: 'Assignment 1' },
-  { id: 'A2', title: 'Assignment 2' },
-  { id: 'A3', title: 'Assignment 3' },
-  { id: 'A4', title: 'Assignment 4' },
-  { id: 'A5', title: 'Assignment 5' },
-  { id: 'A6', title: 'Assignment 6' },
-  { id: 'A7', title: 'Assignment 7' },
-  { id: 'A8', title: 'Assignment 8' },
-  { id: 'A9', title: 'Assignment 9' },
-  { id: 'A10', title: 'Assignment 10' },
-  { id: 'A11', title: 'Assignment 11' },
-  { id: 'A12', title: 'Assignment 12' },
-  { id: 'A13', title: 'Assignment 13' },
-  { id: 'A14', title: 'Assignment 14' },
-  { id: 'A15', title: 'Assignment 15' },
-  { id: 'A16', title: 'Assignment 16' },
-  { id: 'A17', title: 'Assignment 17' },
-  { id: 'A18', title: 'Assignment 18' },
-  { id: 'A19', title: 'Assignment 19' },
-  { id: 'A20', title: 'Assignment 20' },
-  { id: 'A21', title: 'Assignment 21' },
-  { id: 'A22', title: 'Assignment 22' }
-];
+file_path = "src/data/assignmentData.tsx"
 
-export const assignmentData: Record<string, Assignment> = {
+with open(file_path, "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
-  'A1': {
-    id: 'A1',
-    title: 'Assignment 1',
-    ps: "Write  a program  in C to check  whether  a given  year is a Leap  Year",
-    objective: "To understand the use of conditional statements in C programming. To implement logical conditions for solving real-world problems. To develop problem-solving skills using decision control structures.",
-    algorithm: [
-      "START",
-      "Accept  year n",
-      "Check  if n is divisible  by 4 and if it is divisible  by 100 and if it is divisble  by 400",
-      "If it is divisible by 4 but not by 100, or it is divisible by 400, display a leap year",
-      "In any other case, display not a leap year",
-      "STOP"
-    ],
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept number n/]
-    Input --> Div4{n is divisible by 4?}
-    Div4 -- No --> NotLeap[/Display Not Leap Year/]
-    Div4 -- Yes --> Div100{n is divisible by 100?}
-    Div100 -- Yes --> Div400{n is divisible by 400?}
-    Div100 -- No --> Leap[/Display Leap Year/]
-    Div400 -- Yes --> Leap
-    Div400 -- No --> NotLeap
-    Leap --> Stop([Stop])
-    NotLeap --> Stop`,
-    io: { input: "2024", output: "" },
-    conclusion: "Thus,  the program  successfully  checks  whether  a given  year is a Leap  Year  using conditional statements in C.",
-    code: `#include <stdio.h>
+# A10 starts around line 492 (index 491)
+# I want to find the exact line for 'A10': {
+start_idx = -1
+for i, line in enumerate(lines):
+    if "'A10': {" in line:
+        start_idx = i
+        break
 
-int main() {
-    int n;
-    printf("Enter a Year - ");
-    scanf("%d", &n);
-    if ((n % 4 == 0 && n % 100 != 0) || (n % 400 == 0)) {
-        printf("Leap Year");
-    } else {
-        printf("Not Leap Year");
-    }
-    return 0;
-}`
-  },
-  'A2': {
-    id: 'A2',
-    title: 'Assignment 2',
-    ps: "Write  a menu  driven  program  in C to implement  the basic  arithmetic  operations  such  as Addition, Subtraction, Multiplication, and Division.",
-    objective: "• To understand  the concept  of menu  driven  programming  in C. • To apply  conditional  statements  and switch –case  control  structures. • To perform  basic  arithmetic  operations  using  user-defined  input. • To enhance  logical  thinking  and problem -solving  skills.",
-    algorithm: [
-      "START",
-      "Accept  operation  input",
-      "Accept two numbers a and b",
-      "if input  was +, display  their sum",
-      "if input  was -, display  their difference",
-      "if input was *, display their product",
-      "if input was /, display their quotient",
-      "STOP"
-    ],
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept number n/]
-    Input --> OpPlus{a = +?}
-    OpPlus -- yes --> DispPlus[/Display a + b/]
-    OpPlus -- no --> OpMinus{a = -?}
-    OpMinus -- yes --> DispMinus[/Display a - b/]
-    OpMinus -- no --> OpMul{a = *?}
-    OpMul -- yes --> DispMul[/Display a * b/]
-    OpMul -- no --> OpDiv{a = /?}
-    OpDiv -- yes --> DispDiv[/Display a / b/]
-    OpDiv -- no --> DispInv[/Display Invalid/]
-    DispPlus --> Stop([Stop])
-    DispMinus --> Stop
-    DispMul --> Stop
-    DispDiv --> Stop
-    DispInv --> Stop`,
-    io: { input: "* 3 5", output: "" },
-    conclusion: "Thus,  the menu  driven  program  in C successfully  performs  basic  arithmetic  operations  using switch –case statements.",
-    code: `#include <stdio.h>
+if start_idx == -1:
+    print("Could not find A10 start")
+    sys.exit(1)
 
-int main() {
-    char n;
-    printf("Enter operation\\n+ Addition\\n- Subtraction\\n* Multiplication\\n/ Division\\n");
-    scanf(" %c", &n);
-    printf("Enter two numbers : ");
-    float a, b;
-    scanf("%f %f", &a, &b);
-    switch (n) {
-        case '+': printf("%f", a + b); break;
-        case '-': printf("%f", a - b); break;
-        case '*': printf("%f", a * b); break;
-        case '/': printf("%f", a / b); break;
-        default: printf("Invalid Input");
-    }
-    return 0;
-}`
-  },
-  'A3': {
-    id: 'A3',
-    title: 'Assignment 3',
-    ps: "Write  a program  in C to generate  multiplication  tables  for a given  number.",
-    objective: "• To understand  the use of looping  statements  in C. · To generate  multiplication  tables  using  loops. · To improve  program  logic and execution  flow understanding.",
-    algorithm: [
-      "START",
-      "Accept number n",
-      "Iterate  i from 1 to 20",
-      "Each  iteration,  display  i × n",
-      "STOP"
-    ],
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept number n/]
-    Input --> Init[i = 1]
-    Init --> Disp[/Display i * n/]
-    Disp --> Inc[i = i + 1]
-    Inc --> Cond{i > 20?}
-    Cond -- no --> Disp
-    Cond -- yes --> Stop([Stop])`,
-    io: { input: "5", output: " " },
-    conclusion: "Thus,  the menu  driven  program  in C successfully  performs  basic  arithmetic  operations  using switch –case statements.",
-    code: `#include <stdio.h>
+# I want to find the end of the assignmentData object (before simulations)
+end_idx = -1
+for i in range(len(lines)-1, 0, -1):
+    if "};" in lines[i] and "assignmentData = {" not in lines[i]:
+        end_idx = i
+        break
 
-int main() {
-    int n;
-    printf("Enter number - ");
-    scanf("%d", &n);
-    for (int i = 1; i <= 20; i++) {
-        printf("%d x %d = %d\\n", n, i, n * i);
-    }
-    return 0;
-}`
-  },
-  'A4': {
-    id: 'A4',
-    title: 'Assignment 4',
-    ps: "Write  a C Program  to calculate  the salary  of an employee  given  his basic  pay (taken  as input from the user). Calculate gross salary of employee. Let HRA be 10 % of basic pay and TA be 5% of basic pay. Let employees pay professional tax as 2% of  total salary. Calculate net salary payable after deductions.",
-    objective: "To understand  the importance  of flowchart  for any programming  model. To learn simple flowchart symbols and arrows to define relationships. To understand  and develop  visual  representations  of flow of data.",
-    algorithm: [
-      "START",
-      "Accept  Basic  Pay BP",
-      "Define  HRA  as 0.1, TA as 0.05 and PT as 0.02",
-      "Calculate  Gross  salary  using  formula:  BP×(1 + HRA + TA)",
-      "Calculate Total Pay using GS×(1 - PT)",
-      "STOP"
-    ],
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept Basic Pay BP/]
-    Input --> Def[Define HRA = 0.1, TA = 0.05 and PT = 0.02]
-    Def --> CalcGP[GP = BP x 1 + HRA + TA]
-    CalcGP --> CalcTP[TP = GP x 1 - PT]
-    CalcTP --> Disp[/Display all information/]
-    Disp --> Stop([Stop])`,
-    io: { input: "1500", output: "" },
-    conclusion: "Thus,  we have  learned  to write  algorithms  and to draw  its representation  in terms of flowchart.",
-    code: `#include <stdio.h>
+if end_idx == -1:
+    print("Could not find assignmentData end")
+    sys.exit(1)
 
-int main() {
-    printf("Enter Basic Pay - ");
-    float BP;
-    scanf("%f", &BP);
-
-    float HRA = 0.1, TA = 0.05, PT = 0.02;
-    float GS = BP * (1 + HRA + TA);
-    printf("Net Salary - %f", GS * (1 - PT));
-    return 0;
-}`
-  },
-  'A5': {
-    id: 'A5',
-    title: 'Assignment 5',
-    ps: "Write  a program  in C to perform  basic  matrix  operations  such  as: 1. Addition  of two matrices 2. Saddle  point  of a matrix 3. Inverse  of a matrix 4. Magic  square  of a matrix",
-    objective: "• To understand  matrix  representation  in C using  two-dimensional  arrays. • To implement  various  matrix  operations  using  C programming. • To develop  logical  thinking  for solving  matrix -based  problems.",
-    algorithm: [
-      "Start",
-      "Read  the order  of the matrix",
-      "Read  elements  of the matrices",
-      "Perform  matrix  addition",
-      "Check  for saddle  point",
-      "Find inverse  of the matrix  (if determinant  ≠ 0)",
-      "Check  whether  the matrix  is a magic  square",
-      "Display  results",
-      "Stop"
-    ],
-    io: { input: "1 0 -2 3 1 -2 -5 -1 9 & 1 0 1 0 1 0 1 0 1", output: " " },
-    conclusion: "Thus,  we have  learned  how to perform  basic  matrix  operations  using  C programming  and understood their practical applications.",
-    code: `#include <stdio.h>
-#include <math.h>
-
-void cofactor(int n, int a[n][n], int c[n-1][n-1], int ai, int aj) {
-    int ioff = 0;
-    for (int i = 0; i < n - 1; i++) {
-        int joff = 0;
-        if (i == ai) ioff = 1;
-        for (int j = 0; j < n - 1; j++) {
-            if (j == aj) joff = 1;
-            c[i][j] = a[i + ioff][j + joff];
-        }
-    }
-}
-
-int Determinant(int n, int a[n][n]) {
-    if (n == 2) return a[0][0] * a[1][1] - a[0][1] * a[1][0];
-    int d = 0, c[n-1][n-1];
-    for (int i = 0; i < n; i++) {
-        cofactor(n, a, c, i, 0);
-        d += pow(-1, i) * a[i][0] * Determinant(n - 1, c);
-    }
-    return d;
-}
-
-void adjoint(int n, int a[n][n], float b[n][n]) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            int c[n-1][n-1];
-            cofactor(n, a, c, i, j);
-            b[i][j] = pow(-1, i + j) * Determinant(n - 1, c);
-        }
-    }
-}
-
-void inverse(int n, int a[n][n], float b[n][n]) {
-    int d = Determinant(n, a);
-    float adj[n][n];
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            int c[n-1][n-1];
-            cofactor(n, a, c, j, i);
-            b[i][j] = (pow(-1, i + j) * Determinant(n - 1, c)) / d;
-        }
-    }
-}
-
-int main() {
-    int n;
-    printf("Enter Size of Matrices\\n");
-    scanf("%d", &n);
-    int a[n][n], b[n][n], sum[n][n];
-    printf("Enter Elements of Matrix A\\n");
-    for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) scanf("%d", &a[i][j]);
-    printf("Enter Elements of Matrix B\\n");
-    for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) scanf("%d", &b[i][j]);
-
-    printf("\\nSum of A and B:\\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) printf("%d ", a[i][j] + b[i][j]);
-        printf("\\n");
-    }
-    return 0;
-}`
-  },
-  'A6': {
-    id: 'A6',
-        title: 'Assignment 6',
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept n/]
-    Input --> Init[f = 1, i = 1]
-    Init --> Cond{i = n?}
-    Cond -- No --> Calc[f = f * i, i = i + 1]
-    Calc --> Cond
-    Cond -- Yes --> Disp[/Display f as factorial/]
-    Disp --> Stop([Stop])`,
-
-    ps: "Write  a C function  to compute  the factorial  of a number  with and without recursion.",
-    objective: "To demonstrate  two different  approaches  for calculating  the factorial  of a number:  iterative (non-recursive) and recursive, showcasing the versatility of problem -solving methods in Programming.",
-    algorithm: [
-      "START",
-      "Accept  number  n",
-      "Iterate  i from 1 to n, and multiply  a product  variable  defined  originally  as 1 by the",
-      "Display  product  as factorial",
-      "STOP"
-    ],
-    io: { input: "4", output: "" },
-    conclusion: "Thus,  we have  successfully  executed  factorial  of a number  with and without Recursion.",
-    code: `#include <stdio.h> 
-
-int factrec(int n) {
-    if (n < 1) return 1;
-    else return (n * factrec(n - 1));
-}
-
-int factloop(int n) {
-    int f = 1;
-    for (int i = 1; i <= n; i++) {
-        f *= i;
-    }
-    return f;
-}
-
-int main() {
-    printf("Enter a number - ");
-    int n;
-    scanf("%d", &n);
-    printf("Factorial with recursion - %d\nFactorial without recursion - %d", factrec(n), factloop(n));
-}`
-  },
-  'A7': {
-    id: 'A7',
-    title: 'Assignment 7',
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept names, roll no, marks/]
-    Input --> Store[Store name, roll no, marks in struct]
-    Store --> Disp[/Display names, roll no, marks/]
-    Disp --> Stop([Stop])`,
-
-    ps: "Write  a C program  to accept  student  details  and display  their result using an array of structures.",
-    objective: "To understand  the concept  of structures  in C. To learn  how to store  multiple  records  using  an array  of structures. To accept  and process  student  details  such  as name,  roll number,  and marks. To calculate total and percentage and display the result.",
-    algorithm: [
-      "START",
-      "Accept  student  name,  roll no. and marks",
-      "Store the accepted value in a struct",
-      "Display details of student",
-      "STOP"
-    ],
-    io: { input: "Om Nayak 91 728", output: "." },
-    conclusion: "Thus, the C program successfully accepts student details using an array of structures  and displays  the calculated  result  including  total marks  and percentage.",
-    code: `#include <stdio.h>
-
-struct student {
-    int rollno;
-    int marks;
-    char name[99];
-};
-
-int main() {
-    printf("Enter Student name, marks and roll number\n");
-    struct student s;
-    fgets(s.name, 99, stdin);
-    scanf("%d %d", &s.marks, &s.rollno);
-    printf("Name - %sRoll Number - %d\nMarks - %d", s.name, s.rollno, s.marks);
-}`
-  },
-  'A8': {
-    id: 'A8',
-    title: 'Assignment 8',
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept marks in 5 courses/]
-    Input --> DispTotal[/Display Total marks = Sum of marks/]
-    DispTotal --> DispPerc[/Display Percentage = Total Marks / 5/]
-    DispPerc --> FailCond{Any marks < 40?}
-    FailCond -- yes --> DispFail[/Display FAIL/]
-    FailCond -- no --> DispPass[/Display PASS/]
-    DispPass --> Grade75{Percentage >= 75?}
-    Grade75 -- yes --> DispDist[/Display Distinction/]
-    Grade75 -- no --> Grade60{Percentage >= 60?}
-    Grade60 -- yes --> DispFirst[/Display First Division/]
-    Grade60 -- no --> Grade50{Percentage >= 50?}
-    Grade50 -- yes --> DispSecond[/Display Second Division/]
-    Grade50 -- no --> DispThird[/Display Third Division/]
-    DispFail --> Stop([Stop])
-    DispDist --> Stop
-    DispFirst --> Stop
-    DispSecond --> Stop
-    DispThird --> Stop`,
-
-    ps: "Write a program in C to accept marks of five courses of a student and compute the result. A student  is considered  PASS  if he/she  scores  40 marks  or more  in each  course.  If the student passes, calculate the aggregate percentage and assign the grade as follows: • Aggregate  ≥ 75% : Distinction • Aggregate  ≥ 60% and < 75% : First Division • Aggregate  ≥ 50% and < 60% : Second  Division • Aggregate  ≥ 40% and < 50% : Third  Division",
-    objective: "• To understand  the use of conditional  statements  in C • To apply  logical  operators  for decision  making • To calculate  total,  percentage,  and grade  of a student • To enhance  problem -solving  skills  using  real-life scenarios",
-    algorithm: [
-      "START",
-      "Accept  marks  of 5 courses",
-      "Define  total marks  as sum of all marks",
-      "It any of the marks  is below  40, display  FAIL  as the result",
-      "Calculate Percentage as total marks divided by 5",
-      "Define Grade as Distinction if percentage is over 75%, else First Division if",
-      "Display all information",
-      "STOP"
-    ],
-    io: { input: "85 74 93 56 68", output: "" },
-    conclusion: "Thus,  the program  to calculate  student  result  and grade  based  on marks  was successfully implemented using C programming. This program demonstrates the effective use of conditional statements, logical operators, and arithmetic operations.",
-    code: `#include <stdio.h>
-
-int main() {
-    printf("Enter Marks in 5 Subjects : ");
-    int m1, m2, m3, m4, m5;
-    scanf("%d %d %d %d %d", &m1, &m2, &m3, &m4, &m5);
-    int t = m1 + m2 + m3 + m4 + m5;
-    float p = t / 5.0;
-    int pass = 1;
-    if (m1 < 40) pass = 0;
-    if (m2 < 40) pass = 0;
-    if (m3 < 40) pass = 0;
-    if (m4 < 40) pass = 0;
-    if (m5 < 40) pass = 0;
-    printf("Total Marks = %d\nPercentage = %f%%\nResult: %s", t, p, (pass ? "PASS" : "FAIL"));
-    if (pass) {
-        printf("\nGrade: ");
-        if (p >= 75) printf("Distinction");
-        else if (p >= 60) printf("First Division");
-        else if (p >= 50) printf("Second Division");
-        else printf("Third Division");
-    }
-}`
-  },
-  'A9': {
-    id: 'A9',
-    title: 'Assignment 9',
-    flowchart: `graph TD
-    Start([Start]) --> Input[/Accept n/]
-    Input --> Init1[d = 0, tn = n]
-    Init1 --> Loop1[tn = tn / 10, d = d + 1]
-    Loop1 --> Cond1{tn <= 0?}
-    Cond1 -- no --> Loop1
-    Cond1 -- yes --> Init2[tn = n, sum = 0]
-    Init2 --> Loop2[sum = sum + tn % 10 ^ d, tn = tn / 10]
-    Loop2 --> Cond2{tn <= 0?}
-    Cond2 -- no --> Loop2
-    Cond2 -- yes --> FinalCond{sum = n?}
-    FinalCond -- yes --> DispArm[/Display Armstrong No./]
-    FinalCond -- no --> DispNot[/Display Not Armstrong No./]
-    DispArm --> Stop([Stop])
-    DispNot --> Stop`,
-
-    ps: "Write  a program  in C to check  whether  the given  number  is an Armstrong  number  or not. An Armstrong  number  is an integer  with three  digits  such  that the sum of the cubes  of its digits is equal to the number itself. Example:  371",
-    objective: "• To understand  the concept  of Armstrong  numbers. • To practice  arithmetic  operations  in C. • To develop  logical  thinking  using  loops  and conditional  statements.",
-    algorithm: [
-      "START",
-      "Accept  number  n",
-      "Iterate  through  n to find digits  d",
-      "Iterate  through  n to find sum of all digits  raised  to d",
-      "If sum equals  n, display  armstrong  number  else display  not armstrong  number",
-      "STOP"
-    ],
-    io: { input: "153", output: " " },
-    conclusion: "Thus,  we have  successfully  written  a C program  to check  whether  a given  number  is an Armstrong number using loops and arithmetic operations.",
-    code: `#include <stdio.h>
-#include <math.h>
-
-int isArmstrong(int n) {
-    int tn = n;
-    int d = 0;
-    while (tn > 0) {
-        tn /= 10;
-        d++;
-    }
-    tn = n;
-    int s = 0;
-    while (tn > 0) {
-        s += pow(tn % 10, d);
-        tn /= 10;
-    }
-    if (s == n) return 1;
-    return 0;
-}
-
-int main() {
-    int n;
-    printf("Enter number : ");
-    scanf("%d", &n);
-    printf(isArmstrong(n) ? "Armstrong Number" : "Not Armstrong Number");
-}`
-  },
-  'A10': {
+new_content = """  'A10': {
     id: 'A10',
     title: 'Assignment 10',
     flowchart: `graph TD
@@ -541,7 +82,7 @@ long long fact(long long n) {
 
 int main() {
     char op;
-    printf("Enter Operation: \n+, -, *, /, ^, !\n");
+    printf("Enter Operation: \\n+, -, *, /, ^, !\\n");
     scanf(" %c", &op);
     int a, b;
     if (op != '!') {
@@ -622,7 +163,7 @@ int main() {
     printf("Enter a number - ");
     int n;
     scanf("%d", &n);
-    printf("Square Root - %f\\nSquare of the number - %d\\nCube of the number - %d\\nIs number Prime - %s\\nFactorial of number - %d\\nPrime Factors of the number - ", sqrt(n), n * n, n * n * n, (isPrime(n) ? "Yes" : "No"), fact(n));
+    printf("Square Root - %f\\\\nSquare of the number - %d\\\\nCube of the number - %d\\\\nIs number Prime - %s\\\\nFactorial of number - %d\\\\nPrime Factors of the number - ", sqrt(n), n * n, n * n * n, (isPrime(n) ? "Yes" : "No"), fact(n));
     
     int temp = n;
     while (temp > 1) {
@@ -772,7 +313,7 @@ int main() {
     int n;
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
-        printf("%d \\n", rand());
+        printf("%d \\\\n", rand());
     }
 }`
   },
@@ -810,7 +351,7 @@ int main() {
     int n;
     scanf("%d", &n);
     int A[n];
-    printf("Enter elements of array\\n");
+    printf("Enter elements of array\\\\n");
     for (int i = 0; i < n; i++) {
         scanf("%d", &A[i]);
     }
@@ -824,7 +365,7 @@ int main() {
     for (int i = 0; i < oc; i++) {
         printf("%d ", ODD[i]);
     }
-    printf("\\nEVEN - ");
+    printf("\\\\nEVEN - ");
     for (int i = 0; i < ec; i++) {
         printf("%d ", EVEN[i]);
     }
@@ -915,7 +456,7 @@ int main() {
     char B[50];
     printf("Enter String B: ");
     fgets(B, 50, stdin);
-    printf("Length of A = %lu\\nReversed A is %s\\nA and B are %s\\nA is %sa palindrome \\nB is %sa substring of A", strlen(A), revA, (strcmp(A, B) == 0 ? "Same" : "Different"), (strcmp(A, revA) == 0 ? "" : "not "), (strstr(A, B) != NULL ? "" : "not "));
+    printf("Length of A = %lu\\\\nReversed A is %s\\\\nA and B are %s\\\\nA is %sa palindrome \\\\nB is %sa substring of A", strlen(A), revA, (strcmp(A, B) == 0 ? "Same" : "Different"), (strcmp(A, revA) == 0 ? "" : "not "), (strstr(A, B) != NULL ? "" : "not "));
 }`
   },
   'A19': {
@@ -975,18 +516,18 @@ int main() {
     int male = 0;
     for (int i = 0; i < n; i++) {
         printf("Enter name: ");
-        scanf(" %[^\\n]s", employees[i].name);
+        scanf(" %[^\\\\n]s", employees[i].name);
         printf("Enter designation: ");
-        scanf(" %[^\\n]s", employees[i].designation);
+        scanf(" %[^\\\\n]s", employees[i].designation);
         printf("Enter gender (m/f), date of joining and salary: ");
         scanf(" %c %d %d", &employees[i].gender, &employees[i].date, &employees[i].salary);
         if (employees[i].gender == 'm') male++;
         if (employees[i].salary > 10000) highsalary++;
     }
-    printf("Male Employees = %d\\nFemale Employees = %d\\nEmployees with salary over 10000 = %d\\nEmployees with designation AsstManager:\\n", male, n - male, highsalary);
+    printf("Male Employees = %d\\\\nFemale Employees = %d\\\\nEmployees with salary over 10000 = %d\\\\nEmployees with designation AsstManager:\\\\n", male, n - male, highsalary);
     for (int i = 0; i < n; i++) {
         if (strcmp(employees[i].designation, "AsstManager") == 0)
-            printf("%s\\n", employees[i].name);
+            printf("%s\\\\n", employees[i].name);
     }
 }`
   },
@@ -1018,14 +559,14 @@ void swapvar(int a, int b) {
     int temp = b;
     b = a;
     a = temp;
-    printf("After swapping without pointers:\\na = %d, b = %d\\n", a, b);
+    printf("After swapping without pointers:\\\\na = %d, b = %d\\\\n", a, b);
 }
 
 void swappoint(int *a, int *b) {
     int temp = *b;
     *b = *a;
     *a = temp;
-    printf("After swapping with pointers:\\na = %d, b = %d\\n", *a, *b);
+    printf("After swapping with pointers:\\\\na = %d, b = %d\\\\n", *a, *b);
 }
 
 int main() {
@@ -1062,7 +603,7 @@ int main() {
     FILE *f1 = fopen("FileA.txt", "r");
     FILE *f2 = fopen("FileB.txt", "w");
     if (f1 == NULL || f2 == NULL) {
-        printf("Error opening files!\\n");
+        printf("Error opening files!\\\\n");
         return 1;
     }
     char content[200];
@@ -1071,7 +612,7 @@ int main() {
     }
     fclose(f1);
     fclose(f2);
-    printf("File copied successfully.\\n");
+    printf("File copied successfully.\\\\n");
     return 0;
 }`
   },
@@ -1106,21 +647,21 @@ int main() {
     char A[50], B[50];
     printf("Enter String A: ");
     fgets(A, 50, stdin);
-    A[strcspn(A, "\\n")] = 0;
+    A[strcspn(A, "\\\\n")] = 0;
     printf("Enter String B: ");
     fgets(B, 50, stdin);
-    B[strcspn(B, "\\n")] = 0;
+    B[strcspn(B, "\\\\n")] = 0;
     
     char revA[50], revB[50];
     reverse(strlen(A) + 1, A, revA);
     reverse(strlen(B) + 1, B, revB);
 
-    printf("1 - Length\\n2 - Copy\\n3 - Compare\\n4 - Concat\\n5 - Reverse\\nEnter choice: ");
+    printf("1 - Length\\\\n2 - Copy\\\\n3 - Compare\\\\n4 - Concat\\\\n5 - Reverse\\\\nEnter choice: ");
     int c;
     scanf("%d", &c);
     switch (c) {
-        case 1: printf("Length of A - %lu\\nLength of B - %lu", strlen(A), strlen(B)); break;
-        case 2: strcpy(B, A); printf("A - %s\\nB - %s", A, B); break;
+        case 1: printf("Length of A - %lu\\\\nLength of B - %lu", strlen(A), strlen(B)); break;
+        case 2: strcpy(B, A); printf("A - %s\\\\nB - %s", A, B); break;
         case 3: printf("A and B are %s", (strcmp(A, B) == 0 ? "Same" : "Different")); break;
         case 4: strcat(A, B); printf("A - %s", A); break;
         case 5: printf("A - %s, B - %s", revA, revB); break;
@@ -1129,12 +670,9 @@ int main() {
     return 0;
 }`
   }
-};
+"""
 
-// Attach simulations back to the first 4 if they exist
-if (assignmentData['A1']) assignmentData['A1'].sim = <LeapYearSim />;
-if (assignmentData['A2']) assignmentData['A2'].sim = <CalculatorSim />;
-if (assignmentData['A3']) assignmentData['A3'].sim = <TableSim />;
-if (assignmentData['A4']) assignmentData['A4'].sim = <SalarySim />;
+fixed_lines = lines[:start_idx] + [new_content] + lines[end_idx:]
 
-export default assignmentData;
+with open(file_path, "w", encoding="utf-8") as f:
+    f.writelines(fixed_lines)

@@ -518,6 +518,30 @@ int main() {
     DispPowR --> Stop
     DispFact --> Stop
     DispErr --> Stop`,
+
+    ps: "Write a program in C to simulate a simple calculator that performs basic arithmetic operations  such  as addition,  subtraction,  multiplication,  and division.  The calculator  should also perform  special  operations  like computing  xʸ (power)  and x! (factorial).",
+    objective: "• To understand  the use of switch -case  statements  in C. • To perform  basic  arithmetic  and special  mathematical  operations. • To enhance  problem -solving  skills  using  menu -driven  programs.",
+    algorithm: [
+      "START",
+      "Accept  operation  input",
+      "Accept  the required  amount  of numbers",
+      "Check  for illegal  cases  (division  by zero,  negative  factorial)",
+      "Perform given operation",
+      "Display  results",
+      "STOP"
+    ],
+    io: { input: "^ 5 3", output: " " },
+    conclusion: "Thus,  a simple  calculator  program  was successfully  implemented  using  C programming.  The program demonstrates the use of switch -case statements, loops, and arithmetic operations.",
+    code: `#include <stdio.h>
+#include <math.h>
+
+long long fact(long long n) {
+    if (n <= 1) return 1;
+    return (n * fact(n - 1));
+}
+
+int main() {
+
     ps: "Write a program in C to simulate a simple calculator that performs basic arithmetic operations  such  as addition,  subtraction,  multiplication,  and division.  The calculator  should also perform  special  operations  like computing  xʸ (power)  and x! (factorial).",
     objective: "• To understand  the use of switch -case  statements  in C. • To perform  basic  arithmetic  and special  mathematical  operations. • To enhance  problem -solving  skills  using  menu -driven  programs.",
     algorithm: [
@@ -596,45 +620,6 @@ int main() {
       "Display square of number",
       "Display Cube of number",
       "Display primality of number",
-      "Display factorial of number",
-      "Display  prime  factors  of number",
-      "STOP"
-    ],
-    io: { input: "12", output: " " },
-    conclusion: "Thus, the program to perform various mathematical operations on a number was successfully  implemented  using  C programming.  This program  demonstrates  the use of loops, conditional statements, switch -case, and mathematical functions.",
-    code: `#include <stdio.h>
-#include <math.h>
-
-int isPrime(int n) {
-    if (n < 2) return 0;
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) return 0;
-    }
-    return 1;
-}
-
-int fact(int n) {
-    if (n > 0) return n * fact(n - 1);
-    return 1;
-}
-
-int main() {
-    printf("Enter a number - ");
-    int n;
-    scanf("%d", &n);
-    printf("Square Root - %f\\nSquare of the number - %d\\nCube of the number - %d\\nIs number Prime - %s\\nFactorial of number - %d\\nPrime Factors of the number - ", sqrt(n), n * n, n * n * n, (isPrime(n) ? "Yes" : "No"), fact(n));
-    
-    int temp = n;
-    while (temp > 1) {
-        for (int i = 2; i <= temp; i++) {
-            if (temp % i == 0) {
-                printf("%d ", i);
-                temp /= i;
-                break;
-            }
-        }
-    }
-}`
   },
   'A12': {
     id: 'A12',
@@ -648,6 +633,7 @@ int main() {
     GCDCond -- no --> Calc[a = b, b = a % b] --> GCDCond
     GCDCond -- yes --> Disp[/Display a as gcd/]
     Disp --> Stop([Stop])`,
+
     ps: "Write  a program  in C to accept  two numbers  from the user and compute: a) The smallest  common  divisor  of the two numbers  (other  than 1, if any) b) The Greatest  Common  Divisor  (GCD)  of the two numbers",
     objective: "• To understand  the use of mathematical  operations  in C. • To implement  loops  and conditional  statements . • To perform  number -based  computations. • To enhance  logical  thinking  using  menu -driven  programs.",
     algorithm: [
@@ -658,25 +644,6 @@ int main() {
       "Repeat  steps  3 & 4 until GCD  is obtained",
       "Display GCD"
     ],
-    io: { input: "27 63", output: "" },
-    conclusion: "Thus,  the program  to find the smallest  common  divisor  and the Greatest  Common  Divisor  of two numbers was successfully implemented using C programming. This program demonstrates the use of loops, conditional statements, and the Euclidean algorithm.",
-    code: `#include <stdio.h>
-
-int GCD(int a, int b) {
-    if (b == 0) return a;
-    return (GCD(b, a % b));
-}
-
-int main() {
-    printf("Enter 2 numbers - ");
-    int a, b;
-    scanf("%d %d", &a, &b);
-    printf("GCD - %d", GCD(a, b));
-}`
-  },
-  'A13': {
-    id: 'A13',
-    title: 'Assignment 13',
     flowchart: `graph TD
     Start([Start]) --> In[/Accept n/]
     In --> Init[m = 0]
@@ -684,6 +651,7 @@ int main() {
     Cond -- no --> Calc[m = 10m + n % 10, n = n / 10] --> Cond
     Cond -- yes --> Disp[/Display m/]
     Disp --> Stop([Stop])`,
+
     ps: "Write  a program  in C to accept  a number  from the user and print the digits  of the number  in reverse order.",
     objective: "• To understand  number  manipulation  using  loops . • To learn  the use of modulo  (%) and division  (/) operators. • To implement  logic for reversing  digits  of a number. • To improve  problem -solving  skills  using  iterative  structures.",
     algorithm: [
@@ -723,6 +691,7 @@ int main() {
     Cond -- no --> Calc[sum = sum + b % 10 * 2^i, i = i + 1, b = b / 10] --> Cond
     Cond -- yes --> Disp[/Display sum/]
     Disp --> Stop([Stop])`,
+
     ps: "",
     objective: "To understand  number  system  conversions. To learn  how to convert  binary  numbers  to decimal  numbers  in C. To practice the use of loops and arithmetic operations. To develop  logical  thinking  for number  system  problems.",
     algorithm: [
@@ -791,6 +760,7 @@ int main() {
     LenCond -- no --> Cond
     LenCond -- yes --> Disp[/Display ODD and EVEN/]
     Disp --> Stop([Stop])`,
+
     ps: "To accept  a list of N integers  and partition  the list into two sublists containing even and odd numbers.",
     objective: "To understand  how to work  with arrays  in C. To learn  how to separate  numbers  based  on conditions. To practice  the use of loops  and conditional  statements. To display  two different  lists for even  and odd numbers.",
     algorithm: [
@@ -842,6 +812,7 @@ int main() {
     Calc --> NextI[i = i + 1] --> Loop
     Loop -- No --> Print[/Print Sum/]
     Print --> End([End])`,
+
     ps: "To accept  the number  of terms  and find the sum of the sine series.",
     objective: "• To understand  the concept  of mathematical  series  in programming. • To implement  sine series  using  C programming. • To practice  loops  and arithmetic  operations. • To learn  the use of factorial  and power  calculations  in C.",
     algorithm: [
@@ -889,6 +860,7 @@ int main() {
     PrintPal --> End
     PrintSub --> End
     Sub -- No --> End`,
+
     ps: "Write  a C program  that accepts  a string  from the user and performs  the following  string operations: i) Calculate  length  of string ii) String  reversal iii) Equality  check  of two strings iv) Check  palindrome v) Check  substring.",
     objective: "• To understand  basic  string  operations  in C. • To learn  how to manipulate  strings  using  loops  and functions. • To perform  comparison,  reversal,  and substring  checking. • To check  whether  a string  is a palindrome.",
     algorithm: [
@@ -941,6 +913,7 @@ int main() {
     Dest -- No --> RepD
     RepD --> DestLoop
     DestLoop -- Done --> End([End])`,
+
     ps: `Create  Structure  EMPLOYEE  for storing  details  (Name,  Designation,  gender,  Date  of Joining 
 and Salary). Define function members to compute:  
 a) total number  of employees  in an organization  
@@ -1001,6 +974,7 @@ int main() {
     Choice --> WithPtr[Swap with pointers]
     NoPtr --> S1[c = b] --> S2[b = a] --> S3[a = c] --> Print1[/Print a and b/] --> End([End])
     WithPtr --> P1["*c = *b"] --> P2["*b = *a"] --> P3["*a = *c"] --> Print2[/Print a and b/] --> End`,
+
     ps: "Write  a C function  to swap  two numbers  with and without  using  pointers.",
     objective: `• To understand  the concept  of function  calls in the C programming  language.  
 • To learn  the difference  between  call by value  and call by reference.  
@@ -1028,38 +1002,6 @@ void swappoint(int *a, int *b) {
     printf("After swapping with pointers:\\na = %d, b = %d\\n", *a, *b);
 }
 
-int main() {
-    printf("Enter two numbers: ");
-    int a, b;
-    scanf("%d %d", &a, &b);
-    swapvar(a, b);
-    swappoint(&a, &b);
-}`
-  },
-  'A21': {
-    id: 'A21',
-    title: 'Assignment 21',
-    flowchart: `graph TD
-    Start([Start]) --> OpenA[Open FileA.txt for reading]
-    OpenA --> OpenB[Open FileB.txt for writing]
-    OpenB --> Read{Read a line from FileA.txt}
-    Read -- Yes --> Write[Write line to FileB.txt] --> Read
-    Read -- No --> Close[Close files]
-    Close --> End([End])`,
-    ps: "Write  a C program  to copy  contents  of one file to another  using  file handling.",
-    objective: `• To understand  the concept  of file handling  in the C programming  language.  
-• To learn  how to read data from a file and write  data into another  file. 
-• To implement  file copy  operation  using  standard  file handling  functions.`,
-    algorithm: [
-      
-    ],
-    io: { input: "", output: "" },
-    conclusion: `Thus,  the C program  successfully  demonstrates  file handling  operations  by copying  the 
-contents of one file into another using file handling functions.`,
-    code: `#include <stdio.h>
-
-int main() {
-    FILE *f1 = fopen("FileA.txt", "r");
     FILE *f2 = fopen("FileB.txt", "w");
     if (f1 == NULL || f2 == NULL) {
         printf("Error opening files!\\n");
